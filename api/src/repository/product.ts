@@ -1,4 +1,4 @@
-import { ProductSchema, type IProduct } from "@vibes/shared";
+import { type IProduct, ProductSchema } from "@vibes/shared";
 import { model, Schema } from "mongoose";
 
 const productMongooseSchema = new Schema({
