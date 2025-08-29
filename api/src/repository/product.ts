@@ -28,9 +28,10 @@ export class ProductRepository {
 		},
 	): Promise<IFindDatabase<IProduct>> {
 		const query: FilterQuery<IProduct> = {};
+		const sort: Record<string, 1 | -1> = {};
 
 		if (search.order && search.sort) {
-			query.$sort = { [search.sort]: search.order === "asc" ? 1 : -1 };
+			sort[search.sort] = search.order === "asc" ? 1 : -1;
 		}
 
 		if (search.search) {
@@ -47,6 +48,7 @@ export class ProductRepository {
 
 		const count = await Product.countDocuments(query);
 		const products = await Product.find(query)
+			.sort(sort)
 			.limit(limit)
 			.skip((page - 1) * limit)
 			.exec();
