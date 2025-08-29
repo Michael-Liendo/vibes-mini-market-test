@@ -1,10 +1,23 @@
 import type { Request, Response } from "express";
 import Services from "../services";
+import type { TOrder } from "@vibes/shared";
 
-export async function find(_: Request, res: Response) {
-	const products = await Services.product.findAll();
+export async function find(req: Request, res: Response) {
+	const { page, limit, search, available, sort, order } = req.query as {
+		search?: string;
+		available?: boolean;
+		page?: number;
+		limit?: number;
+		sort?: string;
+		order?: TOrder;
+	};
 
-	res.json({ message: "List of products", data: products });
+	const { data, pagination } = await Services.product.findAll(
+		{ search, available, sort, order },
+		{ page, limit },
+	);
+
+	res.json({ message: "List of products", data, pagination });
 }
 
 export async function findById(req: Request, res: Response) {

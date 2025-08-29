@@ -1,11 +1,31 @@
-import type { IProduct } from "@vibes/shared";
+import type { IProduct, IProductQuery, ISReplyFindAll } from "@vibes/shared";
 import Repository from "../repository";
 
 export class ProductService {
-	static async findAll(): Promise<IProduct[]> {
-		const products = await Repository.product.findAll();
+	static async findAll(
+		search: IProductQuery,
+		{
+			page = 1,
+			limit = 10,
+		}: {
+			page?: number;
+			limit?: number;
+		},
+	): Promise<ISReplyFindAll<IProduct>> {
+		const { count, data } = await Repository.product.findAll(search, {
+			page,
+			limit,
+		});
 
-		return products;
+		return {
+			data: data,
+			pagination: {
+				page,
+				limit,
+				total: count,
+				total_pages: Math.ceil(count / limit),
+			},
+		};
 	}
 
 	static async findById(id: string): Promise<IProduct | null> {

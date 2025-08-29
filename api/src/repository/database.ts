@@ -31,7 +31,7 @@ export const connect = async () => {
 	console.log(`[DATABASE] Started Local mongo server at ${uri}`);
 
 	await mongoose.connect(uri);
-	console.log("[DATABASE] Connected to local MongoDB.");
+	console.log("[DATABASE] Connected to local MongoDB");
 
 	await seedDatabase();
 };
