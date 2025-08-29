@@ -4,7 +4,7 @@ import { products } from "./products";
 const router = express.Router();
 
 router.get("/", (_, res) => {
-	res.json("API is running");
+	res.json({ message: "API is running" });
 });
 
 router.use("/products", products);

@@ -1,13 +1,14 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import { connect } from "./repository/database";
 import { routes } from "./routes";
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const host = process.env.HOST || "0.0.0.0";
+const host = process.env.HOST || "localhost";
 
 app.use(
 	cors({
@@ -19,10 +20,12 @@ app.use(express.json());
 
 app.use("/api", routes);
 
-app.listen({ port: Number(port), host }, (err?: Error) => {
+app.listen({ port: Number(port), host }, async (err?: Error) => {
 	if (err) {
-		console.error("Error starting server:", err);
+		console.error("[SERVER] Error starting server:", err);
 		process.exit(1);
 	}
-	console.log(`Server listening at http://${host}:${port}`);
+	await connect();
+
+	console.log(`[SERVER] Server listening at http://${host}:${port}`);
 });
