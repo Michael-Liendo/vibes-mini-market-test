@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"target": "ES2016",
+		"declaration": true,
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"strict": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"outDir": "./dist"
+	},
+	"exclude": ["node_modules", "dist"],
+	"include": ["src"]
+}

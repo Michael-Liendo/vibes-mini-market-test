@@ -1,0 +1,43 @@
+{
+	"name": "@vibes/root",
+	"version": "0.0.1",
+	"workspaces": [
+		"shared/",
+		"api/",
+		"web/"
+	],
+	"description": "A mini market test for Vibes",
+	"scripts": {
+		"build": "npm run build --ws",
+		"build:shared": "npm run build -w @vibes/shared",
+		"build:web": "npm run build -w @vibes/web",
+		"build:api": "npm run build -w @vibes/api",
+
+		"dev:api": "npm run dev -w @vibes/api",
+		"dev:web": "npm run dev -w @vibes/web",
+
+		"start:web": "npm run start -w @vibes/web",
+		"start:api": "npm run start -w @vibes/api",
+
+		"lint": "npm run lint --ws",
+		"format": "npm run format --ws",
+		"format:unsafe": "npm run format:unsafe --ws"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Michael-Liendo/vibes-mini-market-test.git"
+	},
+	"keywords": [],
+	"author": "Michael Liendo",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Michael-Liendo/vibes-mini-market-test/issues"
+	},
+	"homepage": "https://github.com/Michael-Liendo/vibes-mini-market-test#readme",
+	"dependencies": {
+		"zod": "^4.1.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.2"
+	}
+}
