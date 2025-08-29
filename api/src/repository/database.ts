@@ -17,9 +17,8 @@ const seedProducts: IProduct[] = [
 const seedDatabase = async () => {
 	const count = await Product.countDocuments();
 	if (count === 0) {
-		console.log("[DATABASE] Seeding database with initial products...");
 		await Product.insertMany(seedProducts);
-		console.log("[DATABASE] Database seeded.");
+		console.log("[DATABASE] Database seeded");
 	}
 };
 
