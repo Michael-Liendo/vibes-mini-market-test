@@ -1,6 +1,6 @@
-import type { TOrder } from "@vibes/shared";
-import type { Request, Response } from "express";
-import Services from "../services";
+import type { TOrder } from '@vibes/shared';
+import type { Request, Response } from 'express';
+import Services from '../services';
 
 export async function find(req: Request, res: Response) {
 	const { page, limit, search, available, sort, order } = req.query as {
@@ -17,7 +17,7 @@ export async function find(req: Request, res: Response) {
 		{ page, limit },
 	);
 
-	res.json({ message: "List of products", data, pagination });
+	res.json({ message: 'List of products', data, pagination });
 }
 
 export async function findById(req: Request, res: Response) {

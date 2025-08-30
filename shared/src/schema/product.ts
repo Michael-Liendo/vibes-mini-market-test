@@ -1,7 +1,7 @@
-import z from "zod";
+import z from 'zod';
 
-const TOrder = z.enum(["asc", "desc"]);
-const _TSort = z.enum(["name", "price", "category"]);
+const TOrder = z.enum(['asc', 'desc']);
+const _TSort = z.enum(['name', 'price', 'category']);
 
 export const ProductSchema = z.object({
 	_id: z.coerce.string(),

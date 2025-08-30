@@ -3,8 +3,8 @@ import {
 	type IProduct,
 	type IProductQuery,
 	ProductSchema,
-} from "@vibes/shared";
-import { type FilterQuery, model, Schema } from "mongoose";
+} from '@vibes/shared';
+import { type FilterQuery, model, Schema } from 'mongoose';
 
 const productMongooseSchema = new Schema({
 	name: { type: String, required: true },
@@ -14,7 +14,7 @@ const productMongooseSchema = new Schema({
 	image: { type: String },
 });
 
-export const Product = model<IProduct>("Product", productMongooseSchema);
+export const Product = model<IProduct>('Product', productMongooseSchema);
 
 export class ProductRepository {
 	static async findAll(
@@ -31,11 +31,11 @@ export class ProductRepository {
 		const sort: Record<string, 1 | -1> = {};
 
 		if (search.order && search.sort) {
-			sort[search.sort] = search.order === "asc" ? 1 : -1;
+			sort[search.sort] = search.order === 'asc' ? 1 : -1;
 		}
 
 		if (search.search) {
-			const searchRegex = new RegExp(search.search, "i");
+			const searchRegex = new RegExp(search.search, 'i');
 			query.$or = [
 				{ name: { $regex: searchRegex } },
 				{ category: { $regex: searchRegex } },

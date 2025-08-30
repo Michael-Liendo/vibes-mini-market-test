@@ -22,4 +22,4 @@ export interface ISReplyFindAll<T> {
 	pagination: IPaginationResponse;
 }
 
-export type TOrder = "asc" | "desc";
+export type TOrder = 'asc' | 'desc';

@@ -1,5 +1,5 @@
-import type { IProduct, IProductQuery, ISReplyFindAll } from "@vibes/shared";
-import Repository from "../repository";
+import type { IProduct, IProductQuery, ISReplyFindAll } from '@vibes/shared';
+import Repository from '../repository';
 
 export class ProductService {
 	static async findAll(
