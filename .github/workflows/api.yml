@@ -36,4 +36,4 @@ jobs:
       - name: Build Server
         env:
           PORT: 3001
-        run: npm run build:server
+        run: npm run build:api

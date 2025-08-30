@@ -33,5 +33,5 @@ jobs:
       - name: Build Shared
         run: npm run build:shared
 
-      - name: Build Client
-        run: npm run build:client
+      - name: Build Web
+        run: npm run build:web
