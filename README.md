@@ -59,4 +59,3 @@ La web abre en **http://localhost:3000** y la API se ejecuta en **http://localho
 #### Decisiones
 - Elegí usar las query de la API en lugar de la función `getTopCheapestAvailable` porque es mejor directamente que sea trabajo de la base de datos que el servidor como tal, ya que con grandes datos podría ser muy pesado y lento
 - Me salí un poco de la estructura de carpeta sugerida, pero lo hice para mejorar la organización y la escalabilidad del proyecto. (Y así es que estoy acostumbrado para que haya menos errores y si los hay sean más fácil de resolverlos)
-- No incluí test debido a que no puedo destinar 24h a una prueba técnica sin conocer más información al puesto de trabajo, pero en un entorno de trabajo real, las incluiría
