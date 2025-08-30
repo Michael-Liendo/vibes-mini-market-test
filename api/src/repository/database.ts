@@ -1,12 +1,12 @@
-import { faker } from "@faker-js/faker";
-import type { IProduct } from "@vibes/shared";
-import { MongoMemoryServer } from "mongodb-memory-server";
-import mongoose from "mongoose";
-import { Product } from "./product";
+import { faker } from '@faker-js/faker';
+import type { IProduct } from '@vibes/shared';
+import { MongoMemoryServer } from 'mongodb-memory-server';
+import mongoose from 'mongoose';
+import { Product } from './product';
 
 let mongod: MongoMemoryServer | undefined;
 
-function createRandomProduct(): Omit<IProduct, "_id"> {
+function createRandomProduct(): Omit<IProduct, '_id'> {
 	return {
 		name: faker.commerce.productName(),
 		price: parseFloat(faker.commerce.price()),
@@ -35,7 +35,7 @@ export const connect = async () => {
 	console.log(`[DATABASE] Started Local mongo server at ${uri}`);
 
 	await mongoose.connect(uri);
-	console.log("[DATABASE] Connected to local MongoDB");
+	console.log('[DATABASE] Connected to local MongoDB');
 
 	await seedDatabase();
 };

@@ -1,28 +1,28 @@
-import cors from "cors";
-import dotenv from "dotenv";
-import express from "express";
-import { connect } from "./repository/database";
-import { routes } from "./routes";
+import cors from 'cors';
+import dotenv from 'dotenv';
+import express from 'express';
+import { connect } from './repository/database';
+import { routes } from './routes';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3001;
-const host = process.env.HOST || "localhost";
+const host = process.env.HOST || 'localhost';
 
 app.use(
 	cors({
-		origin: process.env.CORS_ORIGIN?.split(",") ?? "http://localhost:3000",
+		origin: process.env.CORS_ORIGIN?.split(',') ?? 'http://localhost:3000',
 	}),
 );
 
 app.use(express.json());
 
-app.use("/api", routes);
+app.use('/api', routes);
 
 app.listen({ port: Number(port), host }, async (err?: Error) => {
 	if (err) {
-		console.error("[SERVER] Error starting server:", err);
+		console.error('[SERVER] Error starting server:', err);
 		process.exit(1);
 	}
 	await connect();

@@ -1,4 +1,4 @@
-import { ProductService } from "./product.service";
+import { ProductService } from './product.service';
 
 export default class Services {
 	static product = ProductService;

@@ -1,4 +1,4 @@
-import type { IProduct } from "@vibes/shared";
+import type { IProduct } from '@vibes/shared';
 
 /*
   No entendí mucho la necesidad de esta funcion ya que se puede hacer por la base de datos y
