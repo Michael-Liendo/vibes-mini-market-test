@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
 				</Link>
 			</div>
 			<div className="grid md:grid-cols-2 gap-12">
-				<div className="relative w-full h-96 bg-gray-100 rounded-lg">
+				<div className="relative w-full h-96  rounded-lg">
 					<Image
 						src={
 							product.image ??
@@ -58,7 +58,7 @@ export default function ProductDetailPage() {
 						}
 						alt={product.name}
 						fill
-						className="object-contain rounded-lg"
+						className="object-contain rounded-lg h-96"
 					/>
 				</div>
 				<div className="flex flex-col justify-center">

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import type { IProduct } from "@vibes/shared";
 
@@ -18,14 +17,8 @@ export default function ProductCard({ product }: ProductCardProps) {
 					}
 					alt={product.name}
 					fill
-					className="object-cover"
+					className="object-cover w-full h-full"
 				/>
-
-				{product.is_available && (
-					<span className="absolute text-sm bg-red-600 rounded-lg py-1 px-3 top-4 left-4 text-white font-semibold shadow">
-						DESCUENTO
-					</span>
-				)}
 			</div>
 
 			<div className="p-4 flex flex-col justify-between flex-grow">
@@ -56,7 +49,6 @@ export default function ProductCard({ product }: ProductCardProps) {
 							href={`/product/${product._id}`}
 							className="mt-4 w-full flex items-center justify-center bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
 						>
-							<ShoppingCart className="mr-2 h-5 w-5" />
 							Ver mas información
 						</Link>
 					) : null}

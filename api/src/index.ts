@@ -7,12 +7,12 @@ import { routes } from "./routes";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const host = process.env.HOST || "localhost";
 
 app.use(
 	cors({
-		origin: process.env.CORS_ORIGIN?.split(","),
+		origin: process.env.CORS_ORIGIN?.split(",") ?? "http://localhost:3000",
 	}),
 );
 
